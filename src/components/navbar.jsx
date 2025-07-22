@@ -81,7 +81,7 @@ const Navbar = () => {
       </div>
       <div
         className={`fixed ${
-          check ? "translate-x-0" : "translate-x-full"
+          check ? "translate-x-10" : "translate-x-full"
         } top-20 right-0 h-[calc(100vh-5rem)] w-96 transition-transform duration-500 ease-out lg:hidden bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-slate-900/95 backdrop-blur-xl border-l border-white/20 shadow-2xl z-40 overflow-y-auto`}
       >
         {/* Background decoration */}
@@ -89,7 +89,7 @@ const Navbar = () => {
         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl"></div>
 
-        <div className="relative z-10 p-6 space-y-4">
+        <div className="relative z-10 space-y-4 p-2">
           {/* User session content */}
           {session && (
             <>
@@ -109,7 +109,7 @@ const Navbar = () => {
               </div>
 
               {/* Navigation buttons */}
-              <div className="space-y-5 flex flex-col">
+              <div className="space-y-5 flex flex-col place-self-center">
                 <Link href="/" onClick={() => setCheck(false)}>
                   <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/30 transition-all duration-300 group">
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-blue-600/30 transition-all duration-300">
@@ -200,7 +200,7 @@ const Navbar = () => {
               </div>
 
               {/* Divider */}
-              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-6"></div>
+              <div className=" bg-gradient-to-r from-transparent via-white/20 to-transparent my-6"></div>
 
               {/* Sign out button */}
               <button
@@ -259,7 +259,7 @@ const Navbar = () => {
                   Sign in to access all features
                 </p>
               </div>
-              <div className="flex flex-col items-center gap-y-5">
+              <div className="flex flex-col items-center justify-center gap-y-5">
                 <Link href="/signin" onClick={() => setCheck(false)}>
                   <div className="flex items-center justify-between w-80 space-x-3 p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-800/20 hover:from-blue-600/30 hover:to-blue-800/30 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group">
                     <svg
