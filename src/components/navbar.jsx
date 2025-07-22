@@ -89,12 +89,12 @@ const Navbar = () => {
         <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-24 h-24 bg-purple-500/20 rounded-full blur-2xl"></div>
 
-        <div className="relative z-10 space-y-4 p-2">
+        <div className="relative z-10 space-y-4 p-2 flex flex-col justify-center items-center">
           {/* User session content */}
           {session && (
             <>
               {/* User info section */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-4 mb-6 border border-white/20 w-[90vw]">
                 <div className="flex items-center space-x-3">
                   <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
                     {session.user.email?.charAt(0).toUpperCase() || "U"}
@@ -111,7 +111,7 @@ const Navbar = () => {
               {/* Navigation buttons */}
               <div className="space-y-5 flex flex-col place-self-center">
                 <Link href="/" onClick={() => setCheck(false)}>
-                  <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/30 transition-all duration-300 group">
+                  <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/30 transition-all duration-300 group w-[90vw]">
                     <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-blue-600/30 transition-all duration-300">
                       <svg
                         className="w-5 h-5 text-blue-400"
@@ -220,7 +220,7 @@ const Navbar = () => {
                     setCheck(false);
                   }
                 }}
-                className="w-full flex items-center space-x-3 p-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 hover:border-red-400/40 transition-all duration-300 group disabled:opacity-50"
+                className="w-[90vw] flex items-center space-x-3 p-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 hover:border-red-400/40 transition-all duration-300 group disabled:opacity-50"
               >
                 <div className="w-10 h-10 bg-gradient-to-r from-red-500/20 to-red-600/20 rounded-lg flex items-center justify-center group-hover:from-red-500/30 group-hover:to-red-600/30 transition-all duration-300">
                   {isSigningOut ? (
