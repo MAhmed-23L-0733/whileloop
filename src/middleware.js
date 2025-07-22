@@ -20,13 +20,15 @@ export default withAuth(
         return !!token;
       },
     },
+    pages: {
+      signIn: "/signin",
+      error: "/signin",
+    },
   }
-  //   pages: {
-  //     signIn: "/signin",
-  //     error: "/error",
-  //   },
 );
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|public/).*)"],
+  matcher: [
+    "/((?!api/auth|_next/static|_next/image|favicon.ico|public|signin|register).*)",
+  ],
 };
