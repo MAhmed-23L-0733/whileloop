@@ -80,7 +80,7 @@ const VideoCard = ({ video }) => {
     }
   };
   return (
-    <div className="group bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl p-6 hover:bg-white/15 transition-all duration-300 hover:shadow-3xl relative overflow-hidden">
+    <div className="group bg-white/10 backdrop-blur-xl rounded-2xl border border-white/20 shadow-2xl lg:p-6 p-4 hover:bg-white/15 transition-all duration-300 hover:shadow-3xl relative overflow-hidden w-[95vw] lg:w-[35vw]">
       {/* Glass shine effect */}
       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
 
@@ -167,7 +167,7 @@ const VideoCard = ({ video }) => {
               {videoComments.map((comment, index) => (
                 <div
                   key={comment._id || index}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 w-70 lg:w-90"
+                  className="bg-white/5 backdrop-blur-sm rounded-xl p-3 md:p-4 border border-white/10 hover:bg-white/10 transition-all duration-300 w-80 lg:w-90"
                 >
                   <div className="flex items-start space-x-2 md:space-x-3">
                     {/* Avatar */}
@@ -228,9 +228,9 @@ const VideoCard = ({ video }) => {
           e.preventDefault();
           addComment(video._id);
         }}
-        className="mt-4 md:mt-6 lg:w-full place-self-center"
+        className="mt-4 md:mt-6 w-80 lg:w-full place-self-center"
       >
-        <div className="bg-white/5 backdrop-blur-sm rounded-xl lg:p-3 md:p-4 border border-white/10 place-self-center">
+        <div className="lg:bg-white/5 lg:backdrop-blur-sm rounded-xl lg:p-3 md:p-4 lg:border border-white/10 place-self-center">
           <div className="flex items-center space-x-2 md:space-x-3">
             {/* User Avatar for Comment Input */}
             <div className="w-8 h-8 md:w-10 md:h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xs md:text-sm font-semibold shadow-lg flex-shrink-0">
