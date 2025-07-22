@@ -1,10 +1,11 @@
 "use client";
 import SignUpForm from "@/components/ui/signupform";
 import SafeImage from "@/components/SafeImage";
+import Logo from "@/assets/WhileLoop.png";
 
 const Register = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 flex items-center justify-center lg:p-4 relative overflow-hidden pt-10 lg:pt-15">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Floating Orbs */}
@@ -28,7 +29,7 @@ const Register = () => {
           <div className="relative mb-6 flex justify-center">
             <div className="relative">
               <SafeImage
-                src={"/WhileLoop.png"}
+                src={Logo}
                 width={80}
                 height={80}
                 priority
@@ -49,15 +50,15 @@ const Register = () => {
         </div>
 
         {/* Form Container with Glass Effect */}
-        <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl p-8 relative overflow-hidden">
+        <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl lg:p-8 relative overflow-hidden mx-5 lg:mx-0">
           {/* Glass shine effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full animate-pulse"></div>
 
-          <Form />
+          <SignUpForm />
         </div>
 
         {/* Bottom decorative elements */}
-        <div className="mt-8 text-center">
+        <div className="my-8 text-center">
           <div className="flex items-center justify-center space-x-4 text-gray-400">
             <div className="h-px bg-gradient-to-r from-transparent via-gray-500 to-transparent flex-1"></div>
             <span className="text-sm">Welcome to the community</span>

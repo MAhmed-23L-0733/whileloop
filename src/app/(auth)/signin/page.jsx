@@ -1,10 +1,11 @@
 "use client";
 import Form from "@/components/ui/loginform";
 import SafeImage from "@/components/SafeImage";
+import Logo from "@/assets/WhileLoop.png";
 
 const Register = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-800 flex items-center justify-center p-4 pt-10 lg:pt-15">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-purple-500/30 rounded-full blur-3xl"></div>
@@ -18,7 +19,7 @@ const Register = () => {
           <div className="flex items-center justify-center mb-6">
             <div className="relative">
               <SafeImage
-                src={"/WhileLoop.png"}
+                src={Logo}
                 width={80}
                 height={80}
                 priority
@@ -39,7 +40,7 @@ const Register = () => {
         </div>
 
         {/* Form Container with Glass Effect */}
-        <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl p-8 relative overflow-hidden">
+        <div className="bg-white/10 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl lg:p-8 relative overflow-hidden">
           {/* Glass shine effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent transform -skew-x-12 -translate-x-full animate-pulse"></div>
 

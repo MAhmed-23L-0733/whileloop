@@ -6,8 +6,9 @@ import { useContext, useEffect, useState } from "react";
 import Loading from "@/components/ui/loading";
 import VideoCard from "@/components/ui/video-card";
 import { App } from "@/components/provider";
+import Logo from "@/assets/WhileLoop.png";
 
-export default function Home() {
+const Home = () => {
   const [videos, setVideos] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -186,7 +187,7 @@ export default function Home() {
             <div className="flex items-center justify-center space-x-4">
               <div className="relative">
                 <SafeImage
-                  src={"/WhileLoop.png"}
+                  src={Logo}
                   width={120}
                   height={120}
                   priority
@@ -297,4 +298,6 @@ export default function Home() {
       )}
     </>
   );
-}
+};
+
+export default Home;

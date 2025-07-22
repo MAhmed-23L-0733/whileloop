@@ -45,7 +45,7 @@ const SafeImage = ({
       className={className}
       priority={priority}
       onError={handleImageError}
-      onLoadingComplete={() => console.log(`Image loaded successfully: ${src}`)}
+      onLoad={() => console.log(`Image loaded successfully: ${src}`)}
       {...props}
     />
   );

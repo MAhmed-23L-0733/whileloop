@@ -1,5 +1,6 @@
 "use client";
 import SafeImage from "./SafeImage";
+import Logo from "@/assets/WhileLoop.png";
 
 const Footer = () => {
   return (
@@ -15,7 +16,7 @@ const Footer = () => {
           {/* Logo and Brand */}
           <div className="flex items-center justify-center space-x-4 mb-6">
             <SafeImage
-              src={"/WhileLoop.png"}
+              src={Logo}
               width={60}
               height={60}
               priority

@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import React, { useRef, useState } from "react";
 import Link from "next/link";
-import { signIn, useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 
 const Form = () => {
   const router = useRouter();
@@ -22,8 +22,6 @@ const Form = () => {
         password: password.current.value,
         redirect: false,
       });
-
-      console.log("Sign in result:", result); // Debug log
 
       if (result?.error) {
         console.error("Sign in error:", result.error); // Debug log
@@ -51,7 +49,7 @@ const Form = () => {
         </div>
 
         {errors && (
-          <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 text-red-300 rounded-lg text-center">
+          <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 text-red-300 rounded-lg text-center"> 
             {errors}
           </div>
         )}

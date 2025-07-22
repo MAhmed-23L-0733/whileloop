@@ -3,8 +3,9 @@ import SafeImage from "./SafeImage";
 import Checkbox from "./ui/checkbox";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import { useContext, useState, useEffect } from "react";
+import { useContext, useState } from "react";
 import { App } from "./provider";
+import Logo from "@/assets/WhileLoop.png";
 
 const Navbar = () => {
   const [check, setCheck] = useState(false);
@@ -17,7 +18,7 @@ const Navbar = () => {
         <Link href={"/"}>
           <div className="flex items-center justify-center relative z-10">
             <SafeImage
-              src={"/WhileLoop.png"}
+              src={Logo}
               width={70}
               height={70}
               priority
@@ -108,93 +109,95 @@ const Navbar = () => {
               </div>
 
               {/* Navigation buttons */}
-              <Link href="/" onClick={() => setCheck(false)}>
-                <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/30 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-blue-600/30 transition-all duration-300">
-                    <svg
-                      className="w-5 h-5 text-blue-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-                    </svg>
+              <div className="space-y-5 flex flex-col">
+                <Link href="/" onClick={() => setCheck(false)}>
+                  <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-blue-400/30 transition-all duration-300 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500/20 to-blue-600/20 rounded-lg flex items-center justify-center group-hover:from-blue-500/30 group-hover:to-blue-600/30 transition-all duration-300">
+                      <svg
+                        className="w-5 h-5 text-blue-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
+                      </svg>
+                    </div>
+                    <span className="text-white font-medium group-hover:text-blue-300 transition-colors duration-300">
+                      Home
+                    </span>
                   </div>
-                  <span className="text-white font-medium group-hover:text-blue-300 transition-colors duration-300">
-                    Home
-                  </span>
-                </div>
-              </Link>
+                </Link>
 
-              <Link
-                href="/upload"
-                onClick={() => {
-                  setCurrPage("addvideo");
-                  setCheck(false);
-                }}
-              >
-                <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/30 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-purple-600/30 transition-all duration-300">
-                    <svg
-                      className="w-5 h-5 text-purple-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M12 4v16m8-8H4"
-                      />
-                    </svg>
+                <Link
+                  href="/upload"
+                  onClick={() => {
+                    setCurrPage("addvideo");
+                    setCheck(false);
+                  }}
+                >
+                  <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-purple-400/30 transition-all duration-300 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500/20 to-purple-600/20 rounded-lg flex items-center justify-center group-hover:from-purple-500/30 group-hover:to-purple-600/30 transition-all duration-300">
+                      <svg
+                        className="w-5 h-5 text-purple-400"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M12 4v16m8-8H4"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-white font-medium group-hover:text-purple-300 transition-colors duration-300">
+                      Add Video
+                    </span>
                   </div>
-                  <span className="text-white font-medium group-hover:text-purple-300 transition-colors duration-300">
-                    Add Video
-                  </span>
-                </div>
-              </Link>
+                </Link>
 
-              <Link href="/profile" onClick={() => setCheck(false)}>
-                <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-green-400/30 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-lg flex items-center justify-center group-hover:from-green-500/30 group-hover:to-green-600/30 transition-all duration-300">
-                    <svg
-                      className="w-5 h-5 text-green-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                <Link href="/profile" onClick={() => setCheck(false)}>
+                  <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-green-400/30 transition-all duration-300 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-green-500/20 to-green-600/20 rounded-lg flex items-center justify-center group-hover:from-green-500/30 group-hover:to-green-600/30 transition-all duration-300">
+                      <svg
+                        className="w-5 h-5 text-green-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-white font-medium group-hover:text-green-300 transition-colors duration-300">
+                      Profile
+                    </span>
                   </div>
-                  <span className="text-white font-medium group-hover:text-green-300 transition-colors duration-300">
-                    Profile
-                  </span>
-                </div>
-              </Link>
+                </Link>
 
-              <Link href="/about" onClick={() => setCheck(false)}>
-                <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group">
-                  <div className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 rounded-lg flex items-center justify-center group-hover:from-cyan-500/30 group-hover:to-cyan-600/30 transition-all duration-300">
-                    <svg
-                      className="w-5 h-5 text-cyan-400"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
-                    >
-                      <path
-                        fillRule="evenodd"
-                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
+                <Link href="/about" onClick={() => setCheck(false)}>
+                  <div className="flex items-center space-x-3 p-4 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-cyan-400/30 transition-all duration-300 group">
+                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-500/20 to-cyan-600/20 rounded-lg flex items-center justify-center group-hover:from-cyan-500/30 group-hover:to-cyan-600/30 transition-all duration-300">
+                      <svg
+                        className="w-5 h-5 text-cyan-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                    </div>
+                    <span className="text-white font-medium group-hover:text-cyan-300 transition-colors duration-300">
+                      About
+                    </span>
                   </div>
-                  <span className="text-white font-medium group-hover:text-cyan-300 transition-colors duration-300">
-                    About
-                  </span>
-                </div>
-              </Link>
+                </Link>
+              </div>
 
               {/* Divider */}
               <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent my-6"></div>
@@ -203,7 +206,6 @@ const Navbar = () => {
               <button
                 disabled={isSigningOut}
                 onClick={async () => {
-                  setCheck(false);
                   setIsSigningOut(true);
                   try {
                     await signOut({
@@ -215,6 +217,7 @@ const Navbar = () => {
                     window.location.href = "/signin";
                   } finally {
                     setIsSigningOut(false);
+                    setCheck(false);
                   }
                 }}
                 className="w-full flex items-center space-x-3 p-4 rounded-xl bg-red-500/10 hover:bg-red-500/20 border border-red-500/20 hover:border-red-400/40 transition-all duration-300 group disabled:opacity-50"
@@ -256,48 +259,49 @@ const Navbar = () => {
                   Sign in to access all features
                 </p>
               </div>
+              <div className="flex flex-col items-center gap-y-5">
+                <Link href="/signin" onClick={() => setCheck(false)}>
+                  <div className="flex items-center justify-between w-80 space-x-3 p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-800/20 hover:from-blue-600/30 hover:to-blue-800/30 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group">
+                    <svg
+                      className="w-5 h-5 text-blue-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                      />
+                    </svg>
+                    <span className="text-white font-semibold group-hover:text-blue-300 transition-colors duration-300">
+                      Login
+                    </span>
+                  </div>
+                </Link>
 
-              <Link href="/signin" onClick={() => setCheck(false)}>
-                <div className="flex items-center justify-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-blue-600/20 to-blue-800/20 hover:from-blue-600/30 hover:to-blue-800/30 border border-blue-500/30 hover:border-blue-400/50 transition-all duration-300 group">
-                  <svg
-                    className="w-5 h-5 text-blue-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                    />
-                  </svg>
-                  <span className="text-white font-semibold group-hover:text-blue-300 transition-colors duration-300">
-                    Login
-                  </span>
-                </div>
-              </Link>
-
-              <Link href="/register" onClick={() => setCheck(false)}>
-                <div className="flex items-center justify-center space-x-3 p-4 rounded-xl bg-gradient-to-r from-purple-600/20 to-purple-800/20 hover:from-purple-600/30 hover:to-purple-800/30 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group">
-                  <svg
-                    className="w-5 h-5 text-purple-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
-                    />
-                  </svg>
-                  <span className="text-white font-semibold group-hover:text-purple-300 transition-colors duration-300">
-                    Sign Up
-                  </span>
-                </div>
-              </Link>
+                <Link href="/register" onClick={() => setCheck(false)}>
+                  <div className="flex items-center justify-between w-80 space-x-3 p-4 rounded-xl bg-gradient-to-r from-purple-600/20 to-purple-800/20 hover:from-purple-600/30 hover:to-purple-800/30 border border-purple-500/30 hover:border-purple-400/50 transition-all duration-300 group">
+                    <svg
+                      className="w-5 h-5 text-purple-400"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                      />
+                    </svg>
+                    <span className="text-white font-semibold group-hover:text-purple-300 transition-colors duration-300">
+                      Sign Up
+                    </span>
+                  </div>
+                </Link>
+              </div>
             </>
           )}
         </div>
