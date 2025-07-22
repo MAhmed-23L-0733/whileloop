@@ -121,8 +121,8 @@ const Home = () => {
                 <>
                   {/* Stats Bar */}
                   <div className="flex items-center justify-between mb-8">
-                    <div className="flex items-center space-x-6">
-                      <div className="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
+                    <div className="flex items-center space-x-2 mr-2 lg:mr-0">
+                      <div className="bg-white/5 backdrop-blur-sm rounded-lg p-2 lg:p-0 lg:px-4 lg:py-2 border border-white/10">
                         <span className="text-gray-400 text-sm">
                           Total Videos:{" "}
                         </span>
@@ -130,7 +130,7 @@ const Home = () => {
                           {videos.length}
                         </span>
                       </div>
-                      <div className="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-2 border border-white/10">
+                      <div className="bg-white/5 backdrop-blur-sm rounded-lg p-2 lg:p-0 lg:px-4 lg:py-2 border border-white/10">
                         <span className="text-gray-400 text-sm">
                           Recently Added:{" "}
                         </span>
@@ -151,7 +151,7 @@ const Home = () => {
                         onClick={() => {
                           setCurrPage("addvideo");
                         }}
-                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold px-6 py-2 rounded-lg transition-all duration-300 flex items-center space-x-2 cursor-pointer"
+                        className="bg-gradient-to-r from-green-600 to-emerald-600 hover:from-green-700 hover:to-emerald-700 text-white font-semibold lg:px-6 lg:py-2 p-2 lg:p-0 rounded-lg transition-all duration-300 flex items-center space-x-2 cursor-pointer"
                       >
                         <svg
                           className="w-4 h-4"

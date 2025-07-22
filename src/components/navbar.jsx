@@ -81,7 +81,7 @@ const Navbar = () => {
       </div>
       <div
         className={`fixed ${
-          check ? "translate-x-2" : "translate-x-full"
+          check ? "translate-x-3" : "translate-x-full"
         } top-20 right-0 h-[calc(100vh-5rem)] w-96 transition-transform duration-500 ease-out lg:hidden bg-gradient-to-br from-slate-900/95 via-blue-900/95 to-slate-900/95 backdrop-blur-xl border-l border-white/20 shadow-2xl z-40 overflow-y-auto`}
       >
         {/* Background decoration */}
