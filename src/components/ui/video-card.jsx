@@ -10,6 +10,7 @@ const VideoCard = ({ video }) => {
   const [persistentComments, setPersistentComments] = useState(
     video.comments || []
   );
+  const [isDescriptionExpanded, setIsDescriptionExpanded] = useState(false);
 
   const [videoComments, setComments] = useOptimistic(
     persistentComments,
@@ -112,10 +113,33 @@ const VideoCard = ({ video }) => {
           <h3 className="text-white font-bold text-lg leading-tight line-clamp-2 group-hover:text-blue-300 transition-colors duration-300">
             {video.title}
           </h3>
-
-          <p className="text-gray-300 text-sm leading-relaxed line-clamp-3 group-hover:text-gray-200 transition-colors duration-300 w-50 h-10">
-            {video.description}
-          </p>
+          <div>
+            <p
+              className={`text-gray-300 text-sm leading-relaxed group-hover:text-gray-200 transition-all duration-300 overflow-hidden ${
+                isDescriptionExpanded ? "" : "max-h-[4.5rem]"
+              }`}
+              style={
+                !isDescriptionExpanded
+                  ? {
+                      display: "-webkit-box",
+                      WebkitLineClamp: 3,
+                      WebkitBoxOrient: "vertical",
+                      overflow: "hidden",
+                    }
+                  : {}
+              }
+            >
+              {video.description}
+            </p>
+            {video.description && video.description.length > 150 && (
+              <button
+                onClick={() => setIsDescriptionExpanded(!isDescriptionExpanded)}
+                className="text-blue-400 hover:text-blue-300 text-xs mt-1 transition-colors duration-200"
+              >
+                {isDescriptionExpanded ? "Read less" : "Read more"}
+              </button>
+            )}
+          </div>
 
           <div className="flex items-center justify-between space-x-2 pt-2">
             <div className="flex items-center gap-x-2">
