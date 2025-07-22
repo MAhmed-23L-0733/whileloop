@@ -46,7 +46,7 @@ const Home = () => {
           <div className="p-8 border-b border-white/10">
             <div className="max-w-7xl mx-auto">
               <h1 className="text-4xl font-bold text-white mb-2">
-                Welcome back! 👋
+                Welcome back!
               </h1>
               <p className="text-gray-300 text-lg">
                 Discover amazing videos from our community

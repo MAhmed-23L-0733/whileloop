@@ -128,7 +128,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-6">
               <span className="text-gray-400 text-sm">
-                Made with ❤️ for creators
+                Made with love for creators
               </span>
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
