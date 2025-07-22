@@ -50,29 +50,23 @@ const AboutPage = () => {
     {
       name: "Next.js 15",
       description: "React framework with App Router",
-      icon: "⚡",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     },
     {
       name: "React 19",
       description: "Latest React with Server Components",
-      icon: "⚛️",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     },
     {
       name: "MongoDB",
       description: "NoSQL database for scalability",
-      icon: "🍃",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg",
     },
     {
-      name: "ImageKit",
-      description: "Video processing & optimization",
-      icon: "🎥",
+      name: "Tailwind CSS",
+      description: "Utility-first styling",
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
     },
-    {
-      name: "NextAuth.js",
-      description: "Authentication & session management",
-      icon: "🔐",
-    },
-    { name: "Tailwind CSS", description: "Utility-first styling", icon: "🎨" },
   ];
 
   const steps = [
@@ -236,7 +230,7 @@ const AboutPage = () => {
                 className="bg-white/10 backdrop-blur-xl rounded-xl p-6 border border-white/20 shadow-2xl hover:bg-white/15 transition-all duration-300 group"
               >
                 <div className="flex items-center space-x-4">
-                  <span className="text-3xl">{tech.icon}</span>
+                  <img src={tech.src} className="h-20 w-20"></img>
                   <div>
                     <h3 className="text-lg font-bold text-white group-hover:text-blue-300 transition-colors">
                       {tech.name}
