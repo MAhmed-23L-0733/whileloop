@@ -64,7 +64,6 @@ const VideoCard = ({ video }) => {
           createdAt: new Date().toISOString(),
         };
         setPersistentComments((prev) => [...prev, newComment]);
-        alert("Comment added successfully!");
       } else {
         alert("Comment could not be added!");
         // Optionally reload to revert optimistic update
