@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 import Checkbox from "./ui/checkbox";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { App } from "./provider";
 
 const Navbar = () => {
@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="fixed top-0 h-20 w-[100vw] flex items-center justify-between py-10 px-5 lg:px-10 bg-black/70 backdrop-blur-md border-b border-white/10 shadow-lg z-50 before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/5 before:to-transparent before:transform before:skew-x-12 before:animate-pulse">
         <Link href={"/"}>
           <div className="flex items-center justify-center relative z-10">
-            <Image
+            <SafeImage
               src={"/WhileLoop.png"}
               width={70}
               height={70}

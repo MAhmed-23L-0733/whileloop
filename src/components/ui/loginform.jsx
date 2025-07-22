@@ -23,13 +23,19 @@ const Form = () => {
         redirect: false,
       });
 
+      console.log("Sign in result:", result); // Debug log
+
       if (result?.error) {
+        console.error("Sign in error:", result.error); // Debug log
         setErrors("Email or password is incorrect!");
-      } else {
+      } else if (result?.ok) {
         setErrors(null);
         router.push("/");
+      } else {
+        setErrors("Authentication failed. Please try again.");
       }
     } catch (error) {
+      console.error("Sign in catch error:", error); // Debug log
       setErrors("An error occurred. Please try again.");
     } finally {
       setIsLoading(false);

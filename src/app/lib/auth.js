@@ -40,6 +40,17 @@ export const authOptions = {
       },
     }),
   ],
+  pages: {
+    signIn: "/signin",
+    error: "/signin",
+  },
+  session: {
+    strategy: "jwt",
+    maxAge: 30 * 24 * 60 * 60,
+  },
+  secret: process.env.NEXTAUTH_SECRET,
+  // Add these for deployment
+  useSecureCookies: process.env.NODE_ENV === "production",
   callbacks: {
     async jwt({ token, user }) {
       if (user) {
@@ -54,13 +65,6 @@ export const authOptions = {
       return session;
     },
   },
-  pages: {
-    signIn: "/signin",
-    error: "/signin",
-  },
-  session: {
-    strategy: "jwt",
-    maxAge: 30 * 24 * 60 * 60,
-  },
-  secret: process.env.NEXTAUTH_SECRET,
+  // Debug configuration
+  debug: process.env.NODE_ENV === "development",
 };

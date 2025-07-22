@@ -1,6 +1,6 @@
 "use client";
 import Form from "@/components/ui/loginform";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 
 const Register = () => {
   return (
@@ -17,7 +17,7 @@ const Register = () => {
         <div className="text-center mb-8">
           <div className="flex items-center justify-center mb-6">
             <div className="relative">
-              <Image
+              <SafeImage
                 src={"/WhileLoop.png"}
                 width={80}
                 height={80}

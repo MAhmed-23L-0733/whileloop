@@ -1,6 +1,6 @@
 "use client";
-import Form from "@/components/ui/signupform";
-import Image from "next/image";
+import SignUpForm from "@/components/ui/signupform";
+import SafeImage from "@/components/SafeImage";
 
 const Register = () => {
   return (
@@ -27,7 +27,7 @@ const Register = () => {
           {/* Logo with glow effect */}
           <div className="relative mb-6 flex justify-center">
             <div className="relative">
-              <Image
+              <SafeImage
                 src={"/WhileLoop.png"}
                 width={80}
                 height={80}

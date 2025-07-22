@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import SafeImage from "@/components/SafeImage";
 import Link from "next/link";
 import { useSession } from "next-auth/react";
 import { useContext, useEffect, useState } from "react";
@@ -185,7 +185,7 @@ export default function Home() {
             {/* Hero Logo */}
             <div className="flex items-center justify-center space-x-4">
               <div className="relative">
-                <Image
+                <SafeImage
                   src={"/WhileLoop.png"}
                   width={120}
                   height={120}

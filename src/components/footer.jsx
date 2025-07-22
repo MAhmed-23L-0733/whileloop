@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import SafeImage from "./SafeImage";
 
 const Footer = () => {
   return (
@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="text-center mb-12">
           {/* Logo and Brand */}
           <div className="flex items-center justify-center space-x-4 mb-6">
-            <Image
+            <SafeImage
               src={"/WhileLoop.png"}
               width={60}
               height={60}

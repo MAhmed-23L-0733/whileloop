@@ -149,8 +149,8 @@ const Form = () => {
           <div className="text-center mt-6">
             <p className="text-gray-400">
               Already have an account?{" "}
-              <Link 
-                href="/signin" 
+              <Link
+                href="/signin"
                 className="text-blue-400 hover:text-blue-300 font-semibold transition-colors duration-200"
               >
                 Sign In
