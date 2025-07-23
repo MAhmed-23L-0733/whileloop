@@ -35,14 +35,14 @@ const ProfilePage = () => {
   const fetchUserVideos = async () => {
     try {
       setLoading(true);
-      
+
       // Fetch user details
       const userResponse = await fetch(`/api/user/${session.user.email}`);
       if (userResponse.ok) {
         const userData = await userResponse.json();
         setName(userData.name);
       }
-      
+
       // Fetch user videos
       const videosResponse = await fetch(
         `/api/user/videos?email=${session.user.email}`
@@ -175,15 +175,15 @@ const ProfilePage = () => {
                     {/* Video Container */}
                     <div className="relative aspect-video bg-gray-800 rounded-t-2xl overflow-hidden">
                       <Video
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-pointer"
                         src={video.videoUrl}
-                        controls={false}
+                        controls={true}
                         preload="metadata"
                         poster={video.thumbnailUrl}
                       />
 
-                      {/* Play Overlay */}
-                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      {/* Play Overlay - only shows when video is paused */}
+                      <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
                         <div className="bg-white/20 backdrop-blur-sm rounded-full p-4">
                           <FaPlay className="w-6 h-6 text-white" />
                         </div>
@@ -207,21 +207,12 @@ const ProfilePage = () => {
                         {video.description}
                       </p>
 
-                      <div className="flex items-center justify-between text-xs text-gray-500">
+                      <div className="flex items-center justify-between text-xs text-white">
                         <div className="flex items-center space-x-1">
                           <FaCalendarAlt className="w-3 h-3" />
                           <span>
                             {new Date(video.createdAt).toLocaleDateString()}
                           </span>
-                        </div>
-
-                        <div className="flex items-center space-x-2">
-                          <button className="text-blue-400 hover:text-blue-300 transition-colors p-2 rounded-lg hover:bg-white/10">
-                            <FaEdit className="w-4 h-4" />
-                          </button>
-                          <button className="text-red-400 hover:text-red-300 transition-colors p-2 rounded-lg hover:bg-white/10">
-                            <FaTrash className="w-4 h-4" />
-                          </button>
                         </div>
                       </div>
                     </div>
