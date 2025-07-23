@@ -111,7 +111,12 @@ const Home = () => {
                       Be the first to share amazing content!
                     </p>
                     <Link href="/upload">
-                      <button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg">
+                      <button
+                        onClick={() => {
+                          setCurrPage("addvideo");
+                        }}
+                        className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold px-8 py-3 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg"
+                      >
                         Upload Your First Video
                       </button>
                     </Link>
