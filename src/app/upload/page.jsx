@@ -117,8 +117,8 @@ const UploadVideo = () => {
       const data = {
         title: title.current.value || "Untitled Video",
         description: description.current.value || "No description provided",
-        videoUrl: `https://ik.imagekit.io/mahmedl230733/${uploadResponse.name}`,
-        thumbnailUrl: `https://ik.imagekit.io/mahmedl230733/${uploadResponse.name}/ik-thumbnail.jpg`,
+        videoUrl: `https://ik.imagekit.io/mahmed/${uploadResponse.name}`,
+        thumbnailUrl: `https://ik.imagekit.io/mahmed/${uploadResponse.name}/ik-thumbnail.jpg`,
         author: session.user.email,
       };
       const addVideoRes = await fetch("/api/video", {
