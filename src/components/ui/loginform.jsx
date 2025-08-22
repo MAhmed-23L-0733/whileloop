@@ -49,7 +49,7 @@ const Form = () => {
         </div>
 
         {errors && (
-          <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 text-red-300 rounded-lg text-center"> 
+          <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 text-red-300 rounded-lg text-center">
             {errors}
           </div>
         )}
